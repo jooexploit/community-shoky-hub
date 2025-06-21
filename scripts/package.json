@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "web-push": "^3.6.6",
+    "dotenv": "^16.3.1"
+  },
+  "scripts": {
+    "send-push": "node send-push-notifications.js"
+  }
+}

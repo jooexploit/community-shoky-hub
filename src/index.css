@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Toast notification animations */
+@keyframes progress-shrink {
+  from { 
+    width: 100%; 
+  }
+  to { 
+    width: 0%; 
+  }
+}
+
+@keyframes slide-in-from-right-8 {
+  from {
+    transform: translateX(2rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-in-95 {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animation utilities */
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.slide-in-from-right-8 {
+  animation-name: slide-in-from-right-8;
+}
+
+.zoom-in-95 {
+  animation-name: zoom-in-95;
+}
+
+.fade-in {
+  animation-name: fade-in;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  @keyframes slide-in-from-right-8 {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Ensure toasts don't overlap on mobile */
+  .notification-toast {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  .touch-manipulation {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Ensure notification dropdown doesn't overflow on mobile */
+  .notification-dropdown {
+    max-width: calc(100vw - 2rem);
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+  }
+}
