@@ -1,9 +1,11 @@
 // Service Worker for Push Notifications
+const BASE_URL = "/community-shoky-hub/";
+
 self.addEventListener("push", function (event) {
   const options = {
     body: "You have a new notification",
-    icon: "/favicon.ico",
-    badge: "/favicon.ico",
+    icon: BASE_URL + "favicon.svg",
+    badge: BASE_URL + "favicon.svg",
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),
@@ -13,12 +15,12 @@ self.addEventListener("push", function (event) {
       {
         action: "view",
         title: "View",
-        icon: "/favicon.ico",
+        icon: BASE_URL + "favicon.svg",
       },
       {
         action: "close",
         title: "Close",
-        icon: "/favicon.ico",
+        icon: BASE_URL + "favicon.svg",
       },
     ],
     requireInteraction: false,
